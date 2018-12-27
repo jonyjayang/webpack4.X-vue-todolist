@@ -24,6 +24,10 @@ module.exports = {
           'file-loader'
         ]
       },
+        {
+          test: /\.jsx$/,
+          loader: 'babel-loader'
+        },
       {
         test: /\.js$/,
         use: 'babel-loader',
@@ -36,6 +40,20 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['vue-style-loader', 'css-loader']
+      },
+      {
+        test: /\.styl/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          'stylus-loader'
+        ]
       }
       
     
