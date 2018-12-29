@@ -15,6 +15,5 @@ module.exports = merge(baseConfig, {
   plugins:[
     new webpack.HotModuleReplacementPlugin()
   ]
-  
 });
 

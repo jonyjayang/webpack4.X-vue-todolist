@@ -12,6 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^1.0.0",
@@ -26,6 +27,8 @@
   },
   "dependencies": {
     "autoprefixer": "^9.4.3",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
     "stylus": "^0.54.5",
