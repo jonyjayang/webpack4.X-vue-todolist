@@ -2,6 +2,8 @@ const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 // const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
   entry: {
     bundle: path.join(__dirname, '../src/index.js')
@@ -44,19 +46,12 @@ module.exports = {
       {
         test: /\.styl/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true
-            }
-          },
-          'stylus-loader'
-        ]
+          'postcss-loader',
+          'stylus-loader',
+        ],
       }
-      
-    
     ]
   },
   plugins: [
@@ -66,6 +61,12 @@ module.exports = {
     // }
     ),
     new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "../dist/[name].css",
+      chunkFilename: "[id].css"
+    })
   ]
 };
 
