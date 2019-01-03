@@ -12,11 +12,11 @@
 
 <script>
     // 引入header.vue组件
-    import APP_Header from './todo/header.vue';
+    import APP_Header from './layout/header.vue';
     // 引入footer.jsx组件
-    import APP_Footer from './todo/footer.jsx';
+    import APP_Footer from './layout/footer.jsx';
     // // 引入todo.vue组件
-    import APP_Todo from './todo/todo.vue';
+    import APP_Todo from './view/todo/todo.vue';
   export default {
     name: 'App',
     data(){
