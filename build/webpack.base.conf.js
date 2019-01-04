@@ -64,18 +64,25 @@ module.exports = {
       }
     ]
   },
+  optimization:{
+    splitChunks:{
+      chunks:'all'
+      //讲nodemodule文件打包时分离
+    },
+    runtimeChunk:true
+  },
   plugins: [
     new HtmlWebpackPlugin(
-    //   {
-    //   template: path.resolve(__dirname, '../index.html')
-    // }
+      {
+        template: path.join(__dirname, 'template.html')
+    }
     ),
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       filename: "../dist/css/[name].css",
-      chunkFilename: "[id].css"
+      // chunkFilename: "[id].css"
     })
   
   ]
