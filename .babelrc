@@ -9,7 +9,9 @@
     
     ],
     "plugins": [
-      "transform-vue-jsx"
+      "transform-vue-jsx",
+      "syntax-dynamic-import",
+      "transform-object-rest-spread"
     ]
   }
   

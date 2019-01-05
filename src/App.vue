@@ -8,6 +8,7 @@
       <router-view />
     </transition>
    <APP_Footer></APP_Footer>
+   <p style="color:black">{{count}}{{fullName}} 123</p>
 
 
   
@@ -15,6 +16,13 @@
 </template>
 
 <script>
+//引入vuex
+import {
+  mapState,
+  mapGetters,
+//   mapActions,
+//   mapMutations
+} from 'vuex'
     // 引入header.vue组件
     import APP_Header from './layout/header.vue';
     // 引入footer.jsx组件
@@ -27,6 +35,16 @@
         return{
             vue:"这是进行测试"
         }
+    },
+    mounted(){
+      let i=1;
+      setInterval(()=>{
+       this.$store.commit('updateCount',i++)
+      },1000)
+    },
+    computed:{
+      ...mapState(['count']),
+      ...mapGetters(['fullName'])
     },
     components:{
       APP_Header,

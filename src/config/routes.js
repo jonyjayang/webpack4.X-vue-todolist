@@ -1,5 +1,3 @@
-import Todo from '../view/todo/todo.vue';
-import Login from '../view/login/login.vue';
 
 
 export default[
@@ -9,13 +7,15 @@ export default[
     },
     {
         name:"app",
-        props:true,
+        props: true,
+        // props: (route) => ({ id: route.query.b }),
+        component: () => import(/* webpackChunkName: "todo-view" */ '../view/todo/todo.vue'),
         path:"/app",
-        component:Todo
+        
     },
     {
         name:'login',
         path:"/login",
-        component:Login
+        component: () => import(/* webpackChunkName: "login-view" */ '../view/login/login.vue')
     }
 ]
