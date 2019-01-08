@@ -2,6 +2,7 @@ const merge = require('webpack-merge');
 const path = require('path');
 const baseConfig = require('./webpack.base.conf');
 const webpack = require('webpack');
+const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 module.exports = merge(baseConfig, {
   mode: 'development',
   devtool: 'inline-source-map',
@@ -16,7 +17,8 @@ module.exports = merge(baseConfig, {
     }
   },
   plugins:[
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new VueSSRClientPlugin()
   ],
   
 });
